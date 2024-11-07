@@ -115,6 +115,6 @@ async function bootstrap() {
 	}
 }
 
-bootstrap().done((status) => {
+bootstrap().andThen((status) => {
 	Log.Info("Bootstrap complete with status {@Status}", status);
 });
