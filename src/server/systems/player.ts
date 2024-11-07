@@ -1,5 +1,5 @@
 import { Client, Renderable } from "shared/components";
-import { CharacterRigR6 } from "@rbxts/promise-character";
+import { CharacterRigR15 } from "@rbxts/promise-character";
 import { ServerState } from "server/index.server";
 import { getOrError } from "shared/util";
 import { World } from "@rbxts/matter";
@@ -10,7 +10,7 @@ function player(world: World, _: ServerState) {
 		if (!client.old && client.new) {
 			const { player } = client.new;
 			const renderable = getOrError(world, id, Renderable, "Cannot find renderable for client entity");
-			const character = renderable.model as CharacterRigR6;
+			const character = renderable.model as CharacterRigR15;
 			character.Humanoid.ChangeState(Enum.HumanoidStateType.Physics);
 			character.Humanoid.PlatformStand = true;
 			const ball = New("Part")({

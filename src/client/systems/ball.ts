@@ -1,6 +1,6 @@
 import { Players, Workspace } from "@rbxts/services";
 import { Client, Renderable } from "shared/components";
-import { CharacterRigR6 } from "@rbxts/promise-character";
+import { CharacterRigR15 } from "@rbxts/promise-character";
 import { ClientState } from "shared/clientState";
 import { getOrError } from "shared/util";
 import { World } from "@rbxts/matter";
@@ -12,7 +12,7 @@ function ball(world: World, state: ClientState) {
 		if (!client.old && client.new && client.new.player.UserId === player.UserId) {
 			state.playerId = id;
 			const renderable = getOrError(world, id, Renderable, "Cannot find renderable for client entity");
-			const character = renderable.model as CharacterRigR6 & {
+			const character = renderable.model as CharacterRigR15 & {
 				Ball: Part & { BodyAngularVelocity: BodyAngularVelocity };
 			};
 			while (!character.Ball) {

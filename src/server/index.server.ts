@@ -1,7 +1,7 @@
 import { Players, ReplicatedStorage } from "@rbxts/services";
 import { Client, Renderable } from "shared/components";
 import { GameProvider } from "./providers/game";
-import { promiseR6 } from "@rbxts/promise-character";
+import { promiseR15 } from "@rbxts/promise-character";
 import { setupTags } from "shared/setupTags";
 import { AnyEntity } from "@rbxts/matter";
 import { IProfile } from "./data";
@@ -70,7 +70,7 @@ async function bootstrap() {
 		}
 
 		function characterAdded(character: Model) {
-			promiseR6(character)
+			promiseR15(character)
 				.andThen(async (model) => {
 					const playerEntity = world.spawn(
 						Client({
